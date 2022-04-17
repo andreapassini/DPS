@@ -1,4 +1,4 @@
-package iterative;
+package Ex1;
 
 import java.io.*;
 import  java.net.*;
