@@ -20,13 +20,11 @@ public class Reservations {
         return instance;
     }
 
-    public int AvailableSeat(){
-        synchronized (lock1){
-            if(lastSeatAvailable >= maxSeats){
-                return 0;
-            }
-            lastSeatAvailable ++;
-            return lastSeatAvailable - 1;
+    public synchronized int AvailableSeat(){
+        if(lastSeatAvailable >= maxSeats){
+            return 0;
         }
+        lastSeatAvailable ++;
+        return lastSeatAvailable - 1;
     }
 }

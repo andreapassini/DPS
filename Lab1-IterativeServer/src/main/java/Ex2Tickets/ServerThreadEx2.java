@@ -37,7 +37,7 @@ public class ServerThreadEx2 extends Thread{
             // Look for a seat
             freeSeat = r.AvailableSeat();
 
-            //Thread.sleep(10000);
+            Thread.sleep(10000);
 
             if(freeSeat <= 0){
                 response = "Ticket DENIED" + "\n";
@@ -47,7 +47,7 @@ public class ServerThreadEx2 extends Thread{
 
             outToClient.writeBytes(response);
             connectionSocket.close();
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }

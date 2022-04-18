@@ -3,7 +3,7 @@ package Ex2Tickets;
 import Ex1.ServerThreadEx1;
 
 import java.io.*;
-import  java.net.*;
+import java.net.*;
 
 public class MultiServerEx2 {
     public static void main(String argv[]) throws Exception{

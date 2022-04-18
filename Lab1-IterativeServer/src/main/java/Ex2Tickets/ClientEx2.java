@@ -3,7 +3,6 @@ package Ex2Tickets;
 import java.io.*;
 import  java.net.*;
 
-
 public class ClientEx2 {
     // Ask the Server for a ticket
     // Get back the number of the seat
@@ -33,7 +32,7 @@ public class ClientEx2 {
                         new InputStreamReader(clientSocket.getInputStream()));
 
         // send the line to the server
-        //outToServer.writeBytes("Ticket please"+ "\n");
+        // outToServer.writeBytes("Ticket please"+ "\n");
         System.out.println("Request sent . . .");
 
         // read the response from the server
