@@ -15,7 +15,7 @@ public class Reservations {
     public static Reservations getInstance(){
         // Create the object only if it does not exist
         if (instance == null){
-            new Reservations();
+            instance = new Reservations();
         }
         return instance;
     }

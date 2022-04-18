@@ -1,7 +1,5 @@
 package Ex2Tickets;
 
-import Ex1.ServerThreadEx1;
-
 import java.io.*;
 import java.net.*;
 
@@ -26,8 +24,8 @@ public class MultiServerEx2 {
             }
 
             // thread creation passing established socket as arg
-            ServerThreadEx1 theThread =
-                    new ServerThreadEx1(connectionSocket);
+            ServerThreadEx2 theThread =
+                    new ServerThreadEx2(connectionSocket);
 
             // Start the thread
             theThread.start();

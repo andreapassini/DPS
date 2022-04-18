@@ -33,6 +33,7 @@ public class ServerThreadEx2 extends Thread{
             System.out.println("Processing request...");
 
             Reservations r = Reservations.getInstance();
+            System.out.println("Class instance of Reservation");
 
             // Look for a seat
             freeSeat = r.AvailableSeat();
