@@ -21,11 +21,11 @@ public class Reservations {
     }
 
     public synchronized int AvailableSeat(){
-        if(lastSeatAvailable >= maxSeats){
+        if(lastSeatAvailable >= maxSeats + 1){
             return 0;
         }
         int newVar = lastSeatAvailable + 1;
         lastSeatAvailable = newVar;
-        return lastSeatAvailable - 1;
+        return lastSeatAvailable;
     }
 }
