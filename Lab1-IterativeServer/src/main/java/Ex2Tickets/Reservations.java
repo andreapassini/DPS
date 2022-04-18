@@ -6,7 +6,7 @@ public class Reservations {
 
     private int maxSeats = 10;
     private int lastSeatAvailable;
-    private Object lock1 = new Object();
+    //private Object lock1 = new Object();
 
     private Reservations(){
         lastSeatAvailable = 0;
@@ -24,7 +24,8 @@ public class Reservations {
         if(lastSeatAvailable >= maxSeats){
             return 0;
         }
-        lastSeatAvailable ++;
+        int newVar = lastSeatAvailable + 1;
+        lastSeatAvailable = newVar;
         return lastSeatAvailable - 1;
     }
 }
