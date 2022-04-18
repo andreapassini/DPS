@@ -33,7 +33,7 @@ public class ClientEx2 {
 
         // send the line to the server
         // outToServer.writeBytes("Ticket please"+ "\n");
-        System.out.println("Request sent . . .");
+        System.out.println("Request sent...");
 
         // read the response from the server
         response = inFromServer.readLine();
