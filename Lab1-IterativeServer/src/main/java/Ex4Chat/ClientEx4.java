@@ -6,14 +6,19 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class ClientEx4 {
-    // Ask the Server for a ticket
-    // Get back the number of the seat
+    // 1 Thread Producer
+    //      Reads from Keyboard
+    //      Writes on Queue
+    // 1 Thread Consumer
+    //      Reads from Queue (msgs not sent by its client)
+    //      Writes on Console
 
-    public static void main(String argv[]) throws Exception{
+    public static void main(String argv[]) throws Exception {
         int portNumber;
         String request;
         String address;
         String response;
+        String clientId;
 
         // input stream initialization (from user keyboard)
         BufferedReader inFromUser =
@@ -33,21 +38,31 @@ public class ClientEx4 {
                 new BufferedReader(
                         new InputStreamReader(clientSocket.getInputStream()));
 
+        clientId = inFromUser.readLine();
+
+        // Create Client Queue
+        Queue q = new Queue();
+
         //Create a Producer
         //  Producer read from Keyboard
-        //  Producer send to Queue
+        //  Producer send to local Queue
+        Producer p1 = new Producer(clientId, q);
+        // new Thread for the client's Producer
+
+        //Create a Consumer
+        //  Consumer read form local Queue
+        //  Consumer send msg to Server
+        Consumer c1 = new Consumer(clientId, q);
+        // new Thread for the consumer
 
         System.out.println("Welcome to the chat");
 
-        while (true){
-            // read a line from the user
-            request = inFromUser.readLine();
-            if(request != null){
-                // send the line to the server
-                outToServer.writeBytes(request + "\n");
-                System.out.println("Request sent...");
-            }
-        }
+        // read a line from the user
+        request = inFromUser.readLine();
+
+        // send the line to the server
+        outToServer.writeBytes(request + "\n");
+        System.out.println("Request sent...");
 
         // read the response from the server
         response = inFromServer.readLine();
