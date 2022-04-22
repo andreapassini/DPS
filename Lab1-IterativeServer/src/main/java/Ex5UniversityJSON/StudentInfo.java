@@ -1,13 +1,15 @@
 package Ex5UniversityJSON;
 
+import java.util.ArrayList;
+
 public class StudentInfo {
     String name;
     String surname;
     int yearOfBirth;
     PlaceOfResidence placeOfResidence;
-    Exam exams[];
+    ArrayList<Exam> exams;
 
-    public StudentInfo(String name, String surname, int yearOfBirth, PlaceOfResidence place, Exam exams[]){
+    public StudentInfo(String name, String surname, int yearOfBirth, PlaceOfResidence place, ArrayList<Exam> exams){
         this.name = name;
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;

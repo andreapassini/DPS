@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class ClientEx5 {
     public static void main(String argv[]) throws Exception{
@@ -64,7 +65,9 @@ public class ClientEx5 {
 
         int procede = 1;
 
-        Exam exams[] = new Exam[5];
+        // Use an ARRAYLIST PLS
+        ArrayList<Exam> exams= new ArrayList<Exam>();
+
         int i = 0;
 
         while (procede != 0){
@@ -79,10 +82,12 @@ public class ClientEx5 {
             String date = inFromUser.readLine();
 
             Exam exam = new Exam(examName, mark, date);
-            // Use an ARRAYLIST PLS
-            exams[i] = exam;
+
+            exams.add(exam);
+
             i++;
 
+            System.out.println("Press 0 to send your info");
             procede = Integer.parseInt(inFromUser.readLine());
         }
 
