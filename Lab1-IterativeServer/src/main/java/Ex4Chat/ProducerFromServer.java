@@ -18,7 +18,7 @@ public class ProducerFromServer extends Producer{
 
         String fromServer;
 
-        // Busy waiting
+        // SHOULD NOT BE Busy waiting
         while (true){
             try {
                 wait();
