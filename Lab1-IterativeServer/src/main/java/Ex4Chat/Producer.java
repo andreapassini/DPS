@@ -6,8 +6,8 @@ import  java.net.*;
 
 public class Producer implements Runnable {
 
-    private final String id;
-    private final Queue queue;
+    final String id;
+    final Queue queue;
 
     public Producer(String id, Queue q) {
         this.id = id; queue = q;
@@ -17,15 +17,15 @@ public class Producer implements Runnable {
         // Read from keyboard
         String fromKeyboard = null;
 
-        fromKeyboard = produce();
-
         // Busy waiting
         while (true){
+            fromKeyboard = produce();
+
             if (fromKeyboard != null) {
                 System.out.println("Prod. " + id + ": inserisco " + fromKeyboard);
                 queue.put(id + "_|_" + fromKeyboard);
             }
-            
+
             fromKeyboard = produce();
         }
 
