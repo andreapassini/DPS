@@ -16,33 +16,33 @@ public class Producer implements Runnable {
     public void run() {
         // Read from keyboard
         String fromKeyboard = null;
-        try {
-            fromKeyboard = produce();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
-        while (fromKeyboard != null){
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+        fromKeyboard = produce();
+
+        // Busy waiting
+        while (true){
+            if (fromKeyboard != null) {
+                System.out.println("Prod. " + id + ": inserisco " + fromKeyboard);
+                queue.put(id + "_|_" + fromKeyboard);
             }
-
-            System.out.println("Prod. " + id + ": inserisco " + fromKeyboard);
-            queue.put(id + "_|_" + fromKeyboard);
+            
+            fromKeyboard = produce();
         }
 
     }
 
-    public String produce() throws IOException {
+    public String produce() {
         String msg;
 
         // input stream initialization (from user keyboard)
         BufferedReader inFromUser =
                 new BufferedReader(new InputStreamReader(System.in));
 
-        msg = inFromUser.readLine();
+        try {
+            msg = inFromUser.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         return msg;
     }
