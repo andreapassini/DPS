@@ -1,4 +1,4 @@
-package Ex4Chat;
+package main.java.Ex4Chat;
 
 import java.util.ArrayList;
 

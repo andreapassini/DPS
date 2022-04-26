@@ -1,4 +1,4 @@
-package Ex4Chat;
+package main.java.Ex4Chat;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
