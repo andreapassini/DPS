@@ -18,6 +18,11 @@ public class ConsumerClient extends Consumer{
 
     public void run() {
         consume(this.queue.take());
+        try {
+            wait();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void consume(String message) {
