@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b900101e-6571-4d42-9505-ad9b55bb2211" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex2Tickets/ClientEx2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex2Tickets/ClientEx2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex2Tickets/MultiServerEx2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex2Tickets/MultiServerEx2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex2Tickets/Reservations.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex2Tickets/Reservations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex2Tickets/ServerThreadEx2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex2Tickets/ServerThreadEx2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex3Veterinarian/MainEx3.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex3Veterinarian/MainEx3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex3Veterinarian/MyThreadEx3.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex3Veterinarian/MyThreadEx3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex3Veterinarian/WaitingRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex3Veterinarian/WaitingRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/ConsumerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/ConsumerClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/Producer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +39,7 @@
       <workItem from="1650638460002" duration="944000" />
       <workItem from="1650900551923" duration="28000" />
       <workItem from="1650900856452" duration="1818000" />
-      <workItem from="1650980917111" duration="5279000" />
+      <workItem from="1650980917111" duration="5877000" />
     </task>
     <servers />
   </component>
