@@ -21,14 +21,16 @@ public class MultiServerEx2 {
 
             if(connectionSocket != null){
                 System.out.println("Client accept at: " + welcomeSocket.getLocalSocketAddress());
+
+                // thread creation passing established socket as arg
+                ServerThreadEx2 theThread =
+                        new ServerThreadEx2(connectionSocket);
+
+                // Start the thread
+                theThread.start();
             }
 
-            // thread creation passing established socket as arg
-            ServerThreadEx2 theThread =
-                    new ServerThreadEx2(connectionSocket);
 
-            // Start the thread
-            theThread.start();
         }
     }
 

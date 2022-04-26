@@ -26,19 +26,20 @@ public class ClientEx4 {
 
         address = "localhost";
         portNumber = 6789;
+
         //client socket init
         Socket clientSocket = new Socket(address, portNumber);
 
-        // output stream towards
+        // output stream towards Server
         DataOutputStream outToServer =
                 new DataOutputStream(clientSocket.getOutputStream());
 
-        // input stream from socket init
+        // input stream from socket
         BufferedReader inFromServer =
                 new BufferedReader(
                         new InputStreamReader(clientSocket.getInputStream()));
 
-        clientId = inFromUser.readLine();
+        clientId = inFromServer.readLine();
 
         // Create Client Queue
         Queue q = new Queue();
@@ -48,12 +49,14 @@ public class ClientEx4 {
         //  Producer send to local Queue
         Producer p1 = new Producer(clientId, q);
         // new Thread for the client's Producer
+        new Thread(p1).start();
 
         //Create a Consumer
         //  Consumer read form local Queue
         //  Consumer send msg to Server
         Consumer c1 = new Consumer(clientId, q);
         // new Thread for the consumer
+        new Thread(c1).start();
 
         System.out.println("Welcome to the chat");
 

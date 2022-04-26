@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b900101e-6571-4d42-9505-ad9b55bb2211" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/ClientEx4.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/ClientEx4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/MultiServerEx4.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/MultiServerEx4.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,8 @@
       <updated>1650623834837</updated>
       <workItem from="1650623837923" duration="79000" />
       <workItem from="1650638460002" duration="944000" />
+      <workItem from="1650900551923" duration="28000" />
+      <workItem from="1650900856452" duration="1818000" />
     </task>
     <servers />
   </component>

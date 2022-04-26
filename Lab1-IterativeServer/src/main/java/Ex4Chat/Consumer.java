@@ -2,8 +2,8 @@ package Ex4Chat;
 
 public class Consumer implements Runnable {
 
-    private final Queue queue;
-    private final String id;
+    final Queue queue;
+    final String id;
 
     public Consumer(String id, Queue q) {
         this.id = id;

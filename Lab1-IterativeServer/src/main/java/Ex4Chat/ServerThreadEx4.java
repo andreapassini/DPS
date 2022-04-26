@@ -1,7 +1,5 @@
 package Ex4Chat;
 
-import Ex3Veterinarian.WaitingRoom;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -17,8 +15,10 @@ public class ServerThreadEx4 extends Thread{
 
     // the constructor argument is established socket
     public ServerThreadEx4(Socket a, Queue q){
+
         connectionSocket = a;
         q = q;
+
         try {
             inFromClient =
                     new BufferedReader(
@@ -46,7 +46,7 @@ public class ServerThreadEx4 extends Thread{
 
             Consumer c1 = new Consumer("c1", q);
 
-            outToClient.writeBytes(c1);
+            outToClient.writeBytes(String.valueOf(c1));
 
             connectionSocket.close();
         } catch (IOException e) {
