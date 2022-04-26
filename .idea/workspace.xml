@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b900101e-6571-4d42-9505-ad9b55bb2211" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/Producer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/ProducerFromServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1-IterativeServer/src/main/java/Ex4Chat/ProducerFromServer.java" afterDir="false" />
-    </list>
+    <list default="true" id="b900101e-6571-4d42-9505-ad9b55bb2211" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +48,7 @@
       <workItem from="1650638460002" duration="944000" />
       <workItem from="1650900551923" duration="28000" />
       <workItem from="1650900856452" duration="1818000" />
-      <workItem from="1650980917111" duration="12415000" />
+      <workItem from="1650980917111" duration="12521000" />
     </task>
     <servers />
   </component>
