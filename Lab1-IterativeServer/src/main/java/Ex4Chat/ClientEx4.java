@@ -1,4 +1,4 @@
-package Ex4Chat;
+package main.java.Ex4Chat;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -54,7 +54,7 @@ public class ClientEx4 {
         //Create a Consumer
         //  Consumer read form local Queue
         //  Consumer send msg to Server
-        Consumer c1 = new Consumer(clientId, q);
+        ConsumerClient c1 = new ConsumerClient(clientId, q, clientSocket);
         // new Thread for the consumer
         new Thread(c1).start();
 
