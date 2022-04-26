@@ -1,4 +1,4 @@
-package Ex2Tickets;
+package main.java.Ex2Tickets;
 
 import java.io.*;
 import  java.net.*;

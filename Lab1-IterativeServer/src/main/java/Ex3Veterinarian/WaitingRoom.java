@@ -1,6 +1,4 @@
-package Ex3Veterinarian;
-
-import Ex2Tickets.Reservations;
+package main.java.Ex3Veterinarian;
 
 import java.util.Random;
 

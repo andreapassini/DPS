@@ -1,4 +1,4 @@
-package Ex2Tickets;
+package main.java.Ex2Tickets;
 
 public class Reservations {
     // Singleton
