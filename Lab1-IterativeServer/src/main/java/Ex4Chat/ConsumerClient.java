@@ -17,11 +17,8 @@ public class ConsumerClient extends Consumer{
     }
 
     public void run() {
-        consume(this.queue.take());
-        try {
-            wait();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        while (true) {
+            consume(queue.take());
         }
     }
 
@@ -39,7 +36,7 @@ public class ConsumerClient extends Consumer{
 
         // send the line to the server
         try {
-            outToServer.writeBytes(id + " " + message + "\n");
+            outToServer.writeBytes(id + "_|_" + message + "\n");
             System.out.println("MSG sent to Server");
         } catch (IOException e) {
             throw new RuntimeException(e);
