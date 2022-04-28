@@ -56,6 +56,7 @@ public class ClientEx4 {
         //  Producer writes on local Queue
         ProducerFromServer p2 = new ProducerFromServer(clientId, q, clientSocket);
         // new Thread for ProducerFromServer
+        new Thread(p2).start();
 
         //Create ConsumerClientToServer
         //  Consumer read form local Queue

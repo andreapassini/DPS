@@ -43,9 +43,20 @@ public class ServerThreadEx4 extends Thread{
             // Read from the client
             clientRequest = inFromClient.readLine();
 
+            // Create ProducerFromUser
+            //  Read from Client
+            //  Writes to Queue
             ProducerFromUser p1 = new ProducerFromUser("p1", q);
+            // New Thread
+            new Thread(p1).start();
 
-            Consumer c1 = new Consumer("c1", q);
+            // Create ConsumerServer
+            //  Reads from Queue
+            //  Writes to Clients
+            ConsumerServerToClient c1 = new ConsumerServerToClient("c1", q, connectionSocket);
+            // New Thread
+            new Thread(c1).start();
+
 
             outToClient.writeBytes(String.valueOf(c1));
 
