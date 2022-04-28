@@ -16,6 +16,11 @@ public class ProducerFromUser extends Producer {
         // Busy waiting
         while (true){
             fromKeyboard = produce();
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
 
             if (fromKeyboard != null) {
                 // JSON marshaling
@@ -50,7 +55,12 @@ public class ProducerFromUser extends Producer {
             throw new RuntimeException(e);
         }
 
-        return msg;
+        if(msg != null){
+            notifyAll();
+            return msg;
+        }
+
+        return null;
     }
 
 }
