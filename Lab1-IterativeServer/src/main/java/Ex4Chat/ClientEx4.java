@@ -57,12 +57,19 @@ public class ClientEx4 {
         ProducerFromServer p2 = new ProducerFromServer(clientId, q, clientSocket);
         // new Thread for ProducerFromServer
 
-        //Create ConsumerClient
+        //Create ConsumerClientToServer
         //  Consumer read form local Queue
         //  Consumer send msg to Server
         ConsumerClientToServer c1 = new ConsumerClientToServer(clientId, q, clientSocket);
         // new Thread for the consumer
         new Thread(c1).start();
+
+        //Create ConsumerClientFromServer
+        //  Consumer read form local Queue
+        //  Consumer send msg to Server
+        ConsumerClientFromServer c2 = new ConsumerClientFromServer(clientId, q);
+        // new Thread for the consumer
+        new Thread(c2).start();
 
         System.out.println("Welcome to the chat");
 
