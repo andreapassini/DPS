@@ -57,10 +57,7 @@ public class ServerThreadEx4 extends Thread{
             // New Thread
             new Thread(c1).start();
 
-
-            outToClient.writeBytes(String.valueOf(c1));
-
-            connectionSocket.close();
+            System.out.println("Thread Started");
         } catch (IOException e) {
             e.printStackTrace();
         }

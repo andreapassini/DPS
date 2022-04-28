@@ -1,6 +1,7 @@
 package Ex4Chat;
 
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -29,6 +30,10 @@ public class MultiServerEx4 {
 
             if(connectionSocket != null){
                 System.out.println("Client accept at: " + welcomeSocket.getLocalSocketAddress());
+
+                //Send ID
+                DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
+                outToClient.writeBytes(idToGive + "\n");
 
                 // thread creation passing established socket as arg
                 ServerThreadEx4 theThread =
