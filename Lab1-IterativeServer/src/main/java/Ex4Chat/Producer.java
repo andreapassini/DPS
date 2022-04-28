@@ -1,4 +1,4 @@
-package main.java.Ex4Chat;
+package Ex4Chat;
 
 
 import java.io.*;
