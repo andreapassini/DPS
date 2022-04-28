@@ -44,8 +44,7 @@ public class ProducerServerFromClient extends Producer{
         // Listen from the Socket
 
         // input stream from socket init
-        BufferedReader inFromCLient =
-                null;
+        BufferedReader inFromCLient = null;
         try {
             inFromCLient = new BufferedReader(
                     new InputStreamReader(connectionSocket.getInputStream()));
