@@ -16,16 +16,9 @@ public class ConsumerClient extends Consumer{
         this.clientSocket = clientSocket;
     }
 
-    public void run() {
-        while (true) {
-            consume(queue.take());
-        }
-    }
-
     public void consume(String message) {
         System.out.println("Cons. " + id + ": prelevato " + message);
 
-        // Send msg to Server
         // output stream towards Server
         DataOutputStream outToServer;
         try {
@@ -36,7 +29,7 @@ public class ConsumerClient extends Consumer{
 
         // send the line to the server
         try {
-            outToServer.writeBytes(id + "_|_" + message + "\n");
+            outToServer.writeBytes(message + "\n");
             System.out.println("MSG sent to Server");
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -11,7 +11,9 @@ public class Consumer implements Runnable {
     }
 
     public void run() {
-        consume(queue.take());
+        while (true){
+            consume(queue.take());
+        }
     }
 
     public void consume(String message) {
