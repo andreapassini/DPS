@@ -32,9 +32,14 @@ public class ConsumerClientToServer extends Consumer{
                 throw new RuntimeException(e);
             }
 
+            // JSON marshaling
+            Message m = new Message(jsonMessageIn.id, jsonMessageIn.msg);
+            Gson gsonOut = new Gson();
+            String jsonStringOut = gsonOut.toJson(m);
+
             // send the line to the server
             try {
-                outToServer.writeBytes(message + "\n");
+                outToServer.writeBytes(jsonStringOut + "\n");
                 System.out.println("MSG sent to Server");
             } catch (IOException e) {
                 throw new RuntimeException(e);
