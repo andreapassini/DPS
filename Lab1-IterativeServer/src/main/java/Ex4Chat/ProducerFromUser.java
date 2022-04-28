@@ -18,8 +18,10 @@ public class ProducerFromUser extends Producer {
             fromKeyboard = produce();
 
             if (fromKeyboard != null) {
+                // Use JSON encapsulation
                 System.out.println("Prod. " + id + ": inserisco " + fromKeyboard);
                 queue.put(id + "_|_" + fromKeyboard);
+                notifyAll();
             }
 
             fromKeyboard = produce();
