@@ -1,5 +1,6 @@
 package Ex4Chat;
 
+import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,9 +30,22 @@ public class ProducerFromServer extends Producer {
             fromServer = produce();
 
             if (fromServer != null) {
-                // Writes to Local Queue
-                System.out.println("Prod. " + id + ": inserisco " + fromServer);
-                queue.put(fromServer);
+                // JSON un-marshaling
+                Gson gsonIn = new Gson();
+
+                Message jsonMessageIn = gsonIn.fromJson(fromServer, Message.class);
+
+                if(this.id != jsonMessageIn.id){
+                    // Writes to Local Queue
+                    System.out.println("Prod. " + id + ": inserisco " + fromServer);
+
+                    // JSON marshaling
+                    Message m = new Message(jsonMessageIn.id, jsonMessageIn.msg);
+                    Gson gsonOut = new Gson();
+                    String jsonStringOut = gsonOut.toJson(m);
+
+                    queue.put(jsonStringOut);
+                }
             }
         }
 

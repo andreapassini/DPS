@@ -1,8 +1,8 @@
 package Ex4Chat;
 
 public class Message {
-    private String id;
-    private String msg;
+    String id;
+    String msg;
 
     public Message(String id, String msg) {
         this.id = id;

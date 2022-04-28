@@ -18,7 +18,7 @@ public class ProducerFromUser extends Producer {
             fromKeyboard = produce();
 
             if (fromKeyboard != null) {
-                // Use JSON encapsulation
+                // JSON marshaling
                 Message m = new Message(id, fromKeyboard);
                 Gson gson = new Gson();
                 String userJson = gson.toJson(m);
