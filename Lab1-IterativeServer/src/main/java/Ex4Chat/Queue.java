@@ -27,6 +27,23 @@ public class Queue {
             buffer.remove(0);
         }
 
+        return message;
+    }
+
+    public synchronized String read(){
+        String message = null;
+
+        while(buffer.size() == 0) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(buffer.size()>0){
+            message = buffer.get(0);
+        }
 
         return message;
     }
