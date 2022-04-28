@@ -10,6 +10,8 @@ public class ConsumerClientFromServer extends Consumer{
 
     public void run() {
         while (true){
+            
+
             consume(queue.take());
         }
     }

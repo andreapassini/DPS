@@ -8,7 +8,7 @@ public class Queue {
 
     public synchronized void put(String message) {
         buffer.add(message);
-        notify();
+        notifyAll();
     }
 
     public synchronized String take() {
