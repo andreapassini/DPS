@@ -1,4 +1,4 @@
-package main.java.Ex4Chat;
+package Ex4Chat;
 
 public class Main {
     public static void main(String[] args) {
