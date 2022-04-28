@@ -30,6 +30,8 @@ public class ClientEx4 {
         //client socket init
         Socket clientSocket = new Socket(address, portNumber);
 
+        System.out.println("Connecting");
+
         // output stream towards Server
         DataOutputStream outToServer =
                 new DataOutputStream(clientSocket.getOutputStream());
@@ -40,6 +42,7 @@ public class ClientEx4 {
                         new InputStreamReader(clientSocket.getInputStream()));
 
         clientId = inFromServer.readLine();
+        System.out.println("Got my ID");
 
         // Create Client Queue
         Queue q = new Queue();
@@ -71,21 +74,6 @@ public class ClientEx4 {
         ConsumerClientFromServer c2 = new ConsumerClientFromServer(clientId, q);
         // new Thread for the consumer
         new Thread(c2).start();
-
-        System.out.println("Welcome to the chat");
-
-        // read a line from the user
-        request = inFromUser.readLine();
-
-        // send the line to the server
-        outToServer.writeBytes(request + "\n");
-        System.out.println("Request sent...");
-
-        // read the response from the server
-        response = inFromServer.readLine();
-        System.out.println(response);
-
-        clientSocket.close();
     }
 
 }
