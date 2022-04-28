@@ -37,7 +37,7 @@ public class ProducerFromServer extends Producer {
 
                 if(this.id != jsonMessageIn.id){
                     // Writes to Local Queue
-                    System.out.println("Prod. " + id + ": inserisco " + fromServer);
+                    System.out.println("Prod. " + jsonMessageIn.id + ": inserisco " + jsonMessageIn.msg);
 
                     // JSON marshaling
                     Message m = new Message(jsonMessageIn.id, jsonMessageIn.msg);
@@ -50,8 +50,7 @@ public class ProducerFromServer extends Producer {
         }
 
     }
-
-    @Override
+    
     public String produce() {
         // Reads from Server
         String msg;

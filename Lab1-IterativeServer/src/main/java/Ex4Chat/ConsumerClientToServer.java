@@ -22,7 +22,7 @@ public class ConsumerClientToServer extends Consumer{
 
         //Check id, if = this.id => send
         if(jsonMessageIn.id == this.id){
-            System.out.println("Cons. " + id + ": prelevato " + message);
+            System.out.println("Cons. :" + jsonMessageIn.id + " message: " + jsonMessageIn);
 
             // output stream towards Server
             DataOutputStream outToServer;
@@ -39,7 +39,7 @@ public class ConsumerClientToServer extends Consumer{
 
             // send the line to the server
             try {
-                outToServer.writeBytes(jsonStringOut + "\n");
+                outToServer.writeBytes(jsonStringOut);
                 System.out.println("MSG sent to Server");
             } catch (IOException e) {
                 throw new RuntimeException(e);

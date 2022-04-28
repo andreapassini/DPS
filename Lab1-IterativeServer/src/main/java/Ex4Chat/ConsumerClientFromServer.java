@@ -19,7 +19,12 @@ public class ConsumerClientFromServer extends Consumer{
     }
 
     public void consume(String message) {
-        System.out.println("Cons. " + id + ": prelevato " + message);
+
+        //JSON Un-Marshaling
+        Gson gsonIn = new Gson();
+        Message jsonMessageIn = gsonIn.fromJson(message, Message.class);
+
+        System.out.println("From: " + jsonMessageIn.id + ", message: " + jsonMessageIn.msg);
     }
 
     public boolean read(){
