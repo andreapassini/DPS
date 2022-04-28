@@ -44,17 +44,23 @@ public class ClientEx4 {
         // Create Client Queue
         Queue q = new Queue();
 
-        //Create a Producer
+        //Create ProducerFromUser
         //  Producer read from Keyboard
         //  Producer send to local Queue
         ProducerFromUser p1 = new ProducerFromUser(clientId, q);
-        // new Thread for the client's Producer
+        // new Thread for ProducerFromUser
         new Thread(p1).start();
 
-        //Create a Consumer
+        //Create ProducerFromServer
+        //  Producer reads from Server
+        //  Producer writes on local Queue
+        ProducerFromServer p2 = new ProducerFromServer(clientId, q, clientSocket);
+        // new Thread for ProducerFromServer
+
+        //Create ConsumerClient
         //  Consumer read form local Queue
         //  Consumer send msg to Server
-        ConsumerClient c1 = new ConsumerClient(clientId, q, clientSocket);
+        ConsumerClientToServer c1 = new ConsumerClientToServer(clientId, q, clientSocket);
         // new Thread for the consumer
         new Thread(c1).start();
 
