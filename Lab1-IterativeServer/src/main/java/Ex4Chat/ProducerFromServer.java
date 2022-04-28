@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class ProducerFromServer extends Producer{
+public class ProducerFromServer extends Producer {
     Socket clientSocket;
 
     public ProducerFromServer(String id, Queue q, Socket clientSocket) {

@@ -43,7 +43,7 @@ public class ServerThreadEx4 extends Thread{
             // Read from the client
             clientRequest = inFromClient.readLine();
 
-            Producer p1 = new Producer("p1", q);
+            ProducerFromUser p1 = new ProducerFromUser("p1", q);
 
             Consumer c1 = new Consumer("c1", q);
 

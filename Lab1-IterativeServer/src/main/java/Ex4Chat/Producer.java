@@ -1,8 +1,9 @@
 package Ex4Chat;
 
 
-import java.io.*;
-import  java.net.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Producer implements Runnable {
 
@@ -14,35 +15,11 @@ public class Producer implements Runnable {
     }
 
     public void run() {
-        // Read from keyboard
-        String fromKeyboard = null;
-
-        // Busy waiting
-        while (true){
-            fromKeyboard = produce();
-
-            if (fromKeyboard != null) {
-                System.out.println("Prod. " + id + ": inserisco " + fromKeyboard);
-                queue.put(id + "_|_" + fromKeyboard);
-            }
-
-            fromKeyboard = produce();
-        }
 
     }
 
     public String produce() {
-        String msg;
-
-        // input stream initialization (from user keyboard)
-        BufferedReader inFromUser =
-                new BufferedReader(new InputStreamReader(System.in));
-
-        try {
-            msg = inFromUser.readLine();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        String msg = null;
 
         return msg;
     }

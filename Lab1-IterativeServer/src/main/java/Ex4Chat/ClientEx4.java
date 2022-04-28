@@ -47,7 +47,7 @@ public class ClientEx4 {
         //Create a Producer
         //  Producer read from Keyboard
         //  Producer send to local Queue
-        Producer p1 = new Producer(clientId, q);
+        ProducerFromUser p1 = new ProducerFromUser(clientId, q);
         // new Thread for the client's Producer
         new Thread(p1).start();
 
