@@ -1,6 +1,6 @@
 package Ex4Chat;
 
-
+import com.google.gson.Gson;
 import java.io.*;
 
 public class ProducerFromUser extends Producer {
@@ -19,8 +19,14 @@ public class ProducerFromUser extends Producer {
 
             if (fromKeyboard != null) {
                 // Use JSON encapsulation
+                Message m = new Message(id, fromKeyboard);
+                Gson gson = new Gson();
+                String userJson = gson.toJson(m);
+
                 System.out.println("Prod. " + id + ": inserisco " + fromKeyboard);
-                queue.put(id + "_|_" + fromKeyboard);
+
+                queue.put(userJson + "\n");
+
                 notifyAll();
             }
 
@@ -35,6 +41,8 @@ public class ProducerFromUser extends Producer {
         // input stream initialization (from user keyboard)
         BufferedReader inFromUser =
                 new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("Insert Message: \n");
 
         try {
             msg = inFromUser.readLine();
