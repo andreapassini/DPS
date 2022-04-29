@@ -43,5 +43,7 @@ public class Client {
                 outToServer.writeBytes(request + "\n");
             }
         }
+
+        clientSocket.close();
     }
 }
