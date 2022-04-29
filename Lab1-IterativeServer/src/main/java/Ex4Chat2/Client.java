@@ -33,7 +33,7 @@ public class Client {
         request = "1";
 
         //Cicle
-        while (request.equals("0")){
+        while (request == "0"){
             System.out.println("Write something: ");
             request = inFromUser.readLine();
 

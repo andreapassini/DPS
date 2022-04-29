@@ -18,8 +18,8 @@ public class ServerThread extends Thread {
         // Start Producer
         Producer p1 = new Producer("p1", q, connectionSocket);
         Consumer c1 = new Consumer("c1", q);
-        new Thread(c1);
-        new Thread(p1);
+        new Thread(c1).start();
+        new Thread(p1).start();
 
         // Start Consumer
     }

@@ -1,18 +1,18 @@
-join/Main.java
- join.Main
-join/MyThread.java
- join.MyThread
+producerConsumer/Consumer.java
+ producerConsumer.Consumer
 semaphore/Main.java
  semaphore.Main
 semaphore/MyThread.java
  semaphore.MyThread
-semaphore/Semaphore.java
- semaphore.Semaphore
-producerConsumer/Consumer.java
- producerConsumer.Consumer
+join/Main.java
+ join.Main
 producerConsumer/Main.java
  producerConsumer.Main
+join/MyThread.java
+ join.MyThread
 producerConsumer/Queue.java
  producerConsumer.Queue
 producerConsumer/Producer.java
  producerConsumer.Producer
+semaphore/Semaphore.java
+ semaphore.Semaphore

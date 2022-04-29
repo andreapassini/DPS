@@ -1,3 +1,15 @@
+Sum.java
+ Sum
+ Sum$SumRequest
+ Sum$SumRequest$1
+ Sum$SumRequest$Builder
+ Sum$SumRequestOrBuilder
+ Sum$SumResponse
+ Sum$SumResponse$1
+ Sum$SumResponse$Builder
+ Sum$SumResponseOrBuilder
+UniversityEx/Client.java
+ UniversityEx.Client
 it/ewlab/researcher/ResearcherOuterClass.java
  it.ewlab.researcher.ResearcherOuterClass
  it.ewlab.researcher.ResearcherOuterClass$Researcher
@@ -12,6 +24,18 @@ it/ewlab/researcher/ResearcherOuterClass.java
  it.ewlab.researcher.ResearcherOuterClass$ResearcherOrBuilder
 researcher/Client.java
  researcher.Client
+SumServiceGrpc.java
+ SumServiceGrpc
+ SumServiceGrpc$MethodHandlers
+ SumServiceGrpc$SumServiceBaseDescriptorSupplier
+ SumServiceGrpc$SumServiceBlockingStub
+ SumServiceGrpc$SumServiceFileDescriptorSupplier
+ SumServiceGrpc$SumServiceFutureStub
+ SumServiceGrpc$SumServiceImplBase
+ SumServiceGrpc$SumServiceMethodDescriptorSupplier
+ SumServiceGrpc$SumServiceStub
+UniversityEx/Server.java
+ UniversityEx.Server
 researcher/Server.java
  researcher.Server
 it/ewlab/researcher/InfoStudentOuterClass.java

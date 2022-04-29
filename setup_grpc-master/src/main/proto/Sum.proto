@@ -1,0 +1,20 @@
+
+
+// Send 2 number
+message SumRequest {
+    required int32 n1 = 1;
+    required int32 n2 = 2;
+}
+
+// Receive 1 Number
+message SumResponse{
+    required int32 sumN = 1;
+}
+
+service SumService {
+  rpc simpleSum(SumRequest) returns (SumResponse);
+
+  rpc repeatedSum(SumRequest) returns (stream SumResponse);
+
+  rpc streamSum(stream SumRequest) returns (stream SumResponse);
+}

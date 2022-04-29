@@ -2,7 +2,6 @@ actor/Client.java
  actor.Client
 com/example/chat/ChatServiceOuterClass.java
  com.example.chat.ChatServiceOuterClass
- com.example.chat.ChatServiceOuterClass$1
  com.example.chat.ChatServiceOuterClass$ChatMessage
  com.example.chat.ChatServiceOuterClass$ChatMessage$1
  com.example.chat.ChatServiceOuterClass$ChatMessage$Builder
@@ -20,7 +19,6 @@ chat/ChatServer.java
  chat.ChatServer
 com/example/grpc/GreetingServiceGrpc.java
  com.example.grpc.GreetingServiceGrpc
- com.example.grpc.GreetingServiceGrpc$1
  com.example.grpc.GreetingServiceGrpc$GreetingServiceBaseDescriptorSupplier
  com.example.grpc.GreetingServiceGrpc$GreetingServiceBlockingStub
  com.example.grpc.GreetingServiceGrpc$GreetingServiceFileDescriptorSupplier
@@ -31,7 +29,6 @@ com/example/grpc/GreetingServiceGrpc.java
  com.example.grpc.GreetingServiceGrpc$MethodHandlers
 com/example/grpc/BidirectionalServiceGrpc.java
  com.example.grpc.BidirectionalServiceGrpc
- com.example.grpc.BidirectionalServiceGrpc$1
  com.example.grpc.BidirectionalServiceGrpc$BidirectionalServiceBaseDescriptorSupplier
  com.example.grpc.BidirectionalServiceGrpc$BidirectionalServiceBlockingStub
  com.example.grpc.BidirectionalServiceGrpc$BidirectionalServiceFileDescriptorSupplier
@@ -42,7 +39,6 @@ com/example/grpc/BidirectionalServiceGrpc.java
  com.example.grpc.BidirectionalServiceGrpc$MethodHandlers
 com/example/grpc/GreetingServiceOuterClass.java
  com.example.grpc.GreetingServiceOuterClass
- com.example.grpc.GreetingServiceOuterClass$1
  com.example.grpc.GreetingServiceOuterClass$HelloRequest
  com.example.grpc.GreetingServiceOuterClass$HelloRequest$1
  com.example.grpc.GreetingServiceOuterClass$HelloRequest$Builder
@@ -55,7 +51,6 @@ bidirectional/Server.java
  bidirectional.Server
 com/example/chat/ChatServiceGrpc.java
  com.example.chat.ChatServiceGrpc
- com.example.chat.ChatServiceGrpc$1
  com.example.chat.ChatServiceGrpc$ChatServiceBaseDescriptorSupplier
  com.example.chat.ChatServiceGrpc$ChatServiceBlockingStub
  com.example.chat.ChatServiceGrpc$ChatServiceFileDescriptorSupplier
@@ -71,7 +66,6 @@ grpchelloserver/App.java
  grpchelloserver.App
 it/ewlab/actor/ActorOuterClass.java
  it.ewlab.actor.ActorOuterClass
- it.ewlab.actor.ActorOuterClass$1
  it.ewlab.actor.ActorOuterClass$Actor
  it.ewlab.actor.ActorOuterClass$Actor$1
  it.ewlab.actor.ActorOuterClass$Actor$Builder
@@ -84,7 +78,6 @@ it/ewlab/actor/ActorOuterClass.java
  it.ewlab.actor.ActorOuterClass$ActorOrBuilder
 com/example/grpc/BidirectionalServiceOuterClass.java
  com.example.grpc.BidirectionalServiceOuterClass
- com.example.grpc.BidirectionalServiceOuterClass$1
  com.example.grpc.BidirectionalServiceOuterClass$ClientRequest
  com.example.grpc.BidirectionalServiceOuterClass$ClientRequest$1
  com.example.grpc.BidirectionalServiceOuterClass$ClientRequest$Builder

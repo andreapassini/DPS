@@ -39,7 +39,7 @@ public class GreetingServiceClient {
         //creating a blocking stub on the channel
         GreetingServiceBlockingStub stub = GreetingServiceGrpc.newBlockingStub(channel);
 
-        //creating the HelloResponse object which will be provided as input to the RPC method
+        //creating the HelloRequest object which will be provided as input to the RPC method
         HelloRequest request = HelloRequest.newBuilder().setName("Pippo").build();
 
         //calling the method. it returns an instance of HelloResponse

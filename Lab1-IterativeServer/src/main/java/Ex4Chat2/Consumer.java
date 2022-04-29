@@ -12,6 +12,11 @@ public class Consumer implements Runnable {
 
     public void run() {
         while (true){
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             consume(queue.take());
         }
     }

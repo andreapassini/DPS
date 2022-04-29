@@ -1,7 +1,6 @@
 syntax = "proto3";
 package com.example.grpc;
 
-// Request payload
 message ClientRequest {
     string stringRequest = 1;
 }
@@ -11,7 +10,5 @@ message ServerResponse {
 }
 
 service BidirectionalService {
-
     rpc bidirectional(stream ClientRequest) returns (stream ServerResponse);
-
 }

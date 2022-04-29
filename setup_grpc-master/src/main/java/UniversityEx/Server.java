@@ -13,6 +13,8 @@ public class Server {
 
         ServerSocket serverSocket = new ServerSocket(9999);
 
+        System.out.println("Server Working . . .");
+
         Socket s = serverSocket.accept();
 
         InfoStudent infoStudent = InfoStudent.parseFrom(s.getInputStream());
