@@ -18,7 +18,7 @@ public class ServerThreadEx4 extends Thread{
     public ServerThreadEx4(Socket a, Queue q){
 
         connectionSocket = a;
-        q = q;
+        this.q = q;
 
         try {
             inFromClient =
