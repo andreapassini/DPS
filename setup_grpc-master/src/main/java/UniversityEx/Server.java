@@ -1,6 +1,6 @@
 package UniversityEx;
 
-import it.ewlab.researcher.ResearcherOuterClass.Researcher;
+import it.ewlab.researcher.InfoStudentOuterClass.InfoStudent;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -15,9 +15,9 @@ public class Server {
 
         Socket s = serverSocket.accept();
 
-        InforStudent inforStudent = InforStudent.parseFrom(s.getInputStream());
+        InfoStudent infoStudent = InfoStudent.parseFrom(s.getInputStream());
 
-        System.out.println(inforStudent);
+        System.out.println(infoStudent);
     }
 
 

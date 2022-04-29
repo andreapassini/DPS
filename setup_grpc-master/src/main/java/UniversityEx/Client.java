@@ -1,6 +1,7 @@
 package UniversityEx;
 
-import it.ewlab.researcher.ResearcherOuterClass.InfoStudent;
+
+import it.ewlab.researcher.InfoStudentOuterClass.InfoStudent;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -21,26 +22,16 @@ public class Client {
                                 .setCity("Brescia")
                                 .setAddress("Via C")
                                 .build())
-                        .addExams(InfoStudent.Exam.newBuilder()
+                        .addExam(InfoStudent.Exam.newBuilder()
                                 .setExamName("DPS")
                                 .setMark(18)
                                 .setDate("Today").build())
-                        .addExams(InfoStudent.Exam.newBuilder()
+                        .addExam(InfoStudent.Exam.newBuilder()
                                 .setExamName("OGD")
                                 .setMark(27)
                                 .setDate("LastYear").build())
                         .build();
 
-        Researcher r =
-                Researcher.newBuilder()
-                        .setName("Gabriele")
-                        .setSurname("Civitarese")
-                        .setType(Researcher.ResearcherType.POSTDOC)
-                        .addPaper(Researcher.Paper.newBuilder().setTitle("Activity Recognition")
-                                .setYear(2014).build())
-                        .addPaper(Researcher.Paper.newBuilder().setTitle("Activity Recognition Again")
-                                .setYear(2015).build())
-                        .build();
 
         infoStudent.writeTo(s.getOutputStream());
 

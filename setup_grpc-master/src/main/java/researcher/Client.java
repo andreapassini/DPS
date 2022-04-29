@@ -22,8 +22,6 @@ public class Client {
                                 .setYear(2015).build())
                         .build();
 
-        InfoSudent
-
         r.writeTo(s.getOutputStream());
 
         s.close();
