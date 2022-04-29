@@ -40,8 +40,7 @@ public class Client {
             if(request != null && !request.equals("0")){
                 //Send message
                 System.out.println("Message Sent ");
-
-                outToServer.writeBytes(request);
+                outToServer.writeBytes(request + "\n");
             }
         }
     }

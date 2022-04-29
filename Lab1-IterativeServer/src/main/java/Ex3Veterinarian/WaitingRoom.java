@@ -1,4 +1,4 @@
-package main.java.Ex3Veterinarian;
+package Ex3Veterinarian;
 
 import java.util.Random;
 

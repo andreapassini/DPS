@@ -16,6 +16,10 @@ public class ServerThread extends Thread {
         this.q = q;
 
         // Start Producer
+        Producer p1 = new Producer("p1", q, connectionSocket);
+        Consumer c1 = new Consumer("c1", q);
+        new Thread(c1);
+        new Thread(p1);
 
         // Start Consumer
     }
