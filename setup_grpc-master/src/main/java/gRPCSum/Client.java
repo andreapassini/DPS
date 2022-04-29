@@ -11,9 +11,6 @@ import java.io.InputStreamReader;
 import io.grpc.stub.StreamObserver;
 import io.grpc.ServerBuilder;
 
-import com.example.grpc.GreetingServiceGrpc;
-
-
 public class Client {
     public static void main(String[] args) {
 
@@ -83,7 +80,6 @@ public class Client {
         final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8080").usePlaintext().build();
 
         //creating a blocking stub on the channel
-        SumServiceBLockingStub
         GreetingServiceBlockingStub stub = SumServiceGrpc.newBlockingStub(channel);
 
         //creating the HelloRequest object which will be provided as input to the RPC method

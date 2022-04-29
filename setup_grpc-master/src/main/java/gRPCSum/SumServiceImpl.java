@@ -6,7 +6,7 @@ import io.grpc.stub.StreamObserver;
 public class SumServiceImpl extends SumServiceGrpc.SumServiceImplBase {
 
     @Override
-    public void simpleSum(Sum.SumRequest request, StreamObserver<Sum.SumResponse> responseObserver) {
+    public void simpleSum(SumRequest request, StreamObserver<SumResponse> responseObserver) {
         //la richiesta è di tipo HelloRequest (definito in .proto)
         System.out.println(request);
 
@@ -15,7 +15,7 @@ public class SumServiceImpl extends SumServiceGrpc.SumServiceImplBase {
         int sum=n1+n2;
 
         //costruisco la richiesta di tipo HelloResponse (sempre definito in .proto)
-        Sum.SumResponse response = Sum.SumResponse.newBuilder().setSumN(sum).build();
+        SumResponse response = SumResponse.newBuilder().setSumN(sum).build();
 
         //passo la risposta nello stream
         responseObserver.onNext(response);
@@ -25,7 +25,7 @@ public class SumServiceImpl extends SumServiceGrpc.SumServiceImplBase {
     }
 
     @Override
-    public void repeatedSum(Sum.SumRequest request, StreamObserver<Sum.SumResponse> responseObserver) {
+    public void repeatedSum(SumRequest request, StreamObserver<SumResponse> responseObserver) {
         int n = request.getN1();
         int t = request.getN2();
 
@@ -33,7 +33,7 @@ public class SumServiceImpl extends SumServiceGrpc.SumServiceImplBase {
             int sum = n * i;
 
             //costruisco la richiesta di tipo HelloResponse (sempre definito in .proto)
-            Sum.SumResponse response = Sum.SumResponse.newBuilder().setSumN(sum).build();
+            SumResponse response = SumResponse.newBuilder().setSumN(sum).build();
 
             //passo la risposta nello stream
             responseObserver.onNext(response);
@@ -42,12 +42,12 @@ public class SumServiceImpl extends SumServiceGrpc.SumServiceImplBase {
     }
 
     @Override
-    public StreamObserver<Sum.SumRequest> streamSum(StreamObserver<Sum.SumResponse> responseObserver) {
+    public StreamObserver<SumRequest> streamSum(StreamObserver<SumResponse> responseObserver) {
         //it returns the stream that will be used by the clients to send messages. The client will write on this stream
-        return new StreamObserver<Sum.SumRequest>() {
+        return new StreamObserver<SumRequest>() {
             //receiving a message from the client
             @Override
-            public void onNext(Sum.SumRequest clientRequest) {
+            public void onNext(SumRequest clientRequest) {
                 int n1 = clientRequest.getN1();
                 int n2 = clientRequest.getN2();
 
@@ -57,7 +57,7 @@ public class SumServiceImpl extends SumServiceGrpc.SumServiceImplBase {
 
                 // sending the response to the client
                 System.out.println("Sending the response to the client...\n");
-                responseObserver.onNext(Sum.SumResponse.newBuilder().setSumN(sum).build());
+                responseObserver.onNext(SumResponse.newBuilder().setSumN(sum).build());
             }
 
 
