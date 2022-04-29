@@ -2,14 +2,14 @@ package gRPCSum;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.stub.StreamObserver;
+import it.ewlab.researcher.Sum;
+import it.ewlab.researcher.SumServiceGrpc;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-
-import io.grpc.stub.StreamObserver;
-import io.grpc.ServerBuilder;
+import java.util.concurrent.TimeUnit;
 
 public class Client {
     public static void main(String[] args) {
@@ -37,8 +37,10 @@ public class Client {
         if(choise == 1){
             //Simple sum
             synchSimpleSum();
+            asyncSimpleSum();
         } else if (choise == 2) {
             // Repeated sum
+
         } else if (choise == 3) {
             // Stream sum
         } else if (choise == 0) {
@@ -54,7 +56,7 @@ public class Client {
         System.out.println("\n...Done!");
     }
 
-    private void synchSimpleSum() {
+    private static void synchSimpleSum() {
         // input stream initialization (from user keyboard)
         BufferedReader inFromUser =
                 new BufferedReader(new InputStreamReader(System.in));
@@ -80,7 +82,7 @@ public class Client {
         final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8080").usePlaintext().build();
 
         //creating a blocking stub on the channel
-        GreetingServiceBlockingStub stub = SumServiceGrpc.newBlockingStub(channel);
+        SumServiceGrpc.SumServiceBlockingStub stub = SumServiceGrpc.newBlockingStub(channel);
 
         //creating the HelloRequest object which will be provided as input to the RPC method
         Sum.SumRequest request = Sum.SumRequest.newBuilder().setN1(n1).setN2(n2).build();
@@ -93,6 +95,73 @@ public class Client {
 
         //closing the channel
         channel.shutdown();
+    }
+
+    private static void asyncSimpleSum() {
+        //plaintext channel on the address (ip/port) which offers the GreetingService service
+        final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8080").usePlaintext().build();
+
+        //creating an asynchronous stub on the channel
+        SumServiceGrpc.SumServiceStub stub = SumServiceGrpc.newStub(channel);
+
+        // input stream initialization (from user keyboard)
+        BufferedReader inFromUser =
+                new BufferedReader(new InputStreamReader(System.in));
+
+        int n1;
+        // Get the 2 numbers from user
+        System.out.println("Insert I Number:  ");
+        try {
+            n1 = Integer.parseInt(inFromUser.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        int n2;
+        System.out.println("Insert II Number:  ");
+        try {
+            n2 = Integer.parseInt(inFromUser.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        Sum.SumRequest request = Sum.SumRequest.newBuilder().setN1(n1).setN2(n2).build();
+
+        //calling the RPC method. since it is asynchronous, we need to define handlers
+        stub.simpleSum(request, new StreamObserver<Sum.SumResponse>() {
+
+            //this hanlder takes care of each item received in the stream
+            @Override
+            public void onNext(Sum.SumResponse value) {
+                //each item is just printed
+                System.out.println(Sum.SumResponse.getSumN());
+            }
+
+            //if there are some errors, this method will be called
+            public void onError(Throwable throwable) {
+
+                System.out.println("Error! "+throwable.getMessage());
+
+            }
+
+            //when the stream is completed (the server called "onCompleted") just close the channel
+            public void onCompleted() {
+
+                channel.shutdownNow();
+
+            }
+
+        });
+
+        //you need this. otherwise the method will terminate before that answers from the server are received
+        try {
+            channel.awaitTermination(10, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
 

@@ -1,3 +1,5 @@
+package it.ewlab.researcher;
+
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
@@ -22,32 +24,32 @@ public final class SumServiceGrpc {
 
   private SumServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "SumService";
+  public static final String SERVICE_NAME = "it.ewlab.researcher.SumService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<Sum.SumRequest,
-      Sum.SumResponse> getSimpleSumMethod;
+  private static volatile io.grpc.MethodDescriptor<it.ewlab.researcher.Sum.SumRequest,
+      it.ewlab.researcher.Sum.SumResponse> getSimpleSumMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "simpleSum",
-      requestType = Sum.SumRequest.class,
-      responseType = Sum.SumResponse.class,
+      requestType = it.ewlab.researcher.Sum.SumRequest.class,
+      responseType = it.ewlab.researcher.Sum.SumResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<Sum.SumRequest,
-      Sum.SumResponse> getSimpleSumMethod() {
-    io.grpc.MethodDescriptor<Sum.SumRequest, Sum.SumResponse> getSimpleSumMethod;
+  public static io.grpc.MethodDescriptor<it.ewlab.researcher.Sum.SumRequest,
+      it.ewlab.researcher.Sum.SumResponse> getSimpleSumMethod() {
+    io.grpc.MethodDescriptor<it.ewlab.researcher.Sum.SumRequest, it.ewlab.researcher.Sum.SumResponse> getSimpleSumMethod;
     if ((getSimpleSumMethod = SumServiceGrpc.getSimpleSumMethod) == null) {
       synchronized (SumServiceGrpc.class) {
         if ((getSimpleSumMethod = SumServiceGrpc.getSimpleSumMethod) == null) {
           SumServiceGrpc.getSimpleSumMethod = getSimpleSumMethod =
-              io.grpc.MethodDescriptor.<Sum.SumRequest, Sum.SumResponse>newBuilder()
+              io.grpc.MethodDescriptor.<it.ewlab.researcher.Sum.SumRequest, it.ewlab.researcher.Sum.SumResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "simpleSum"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Sum.SumRequest.getDefaultInstance()))
+                  it.ewlab.researcher.Sum.SumRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Sum.SumResponse.getDefaultInstance()))
+                  it.ewlab.researcher.Sum.SumResponse.getDefaultInstance()))
               .setSchemaDescriptor(new SumServiceMethodDescriptorSupplier("simpleSum"))
               .build();
         }
@@ -56,29 +58,29 @@ public final class SumServiceGrpc {
     return getSimpleSumMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<Sum.SumRequest,
-      Sum.SumResponse> getRepeatedSumMethod;
+  private static volatile io.grpc.MethodDescriptor<it.ewlab.researcher.Sum.SumRequest,
+      it.ewlab.researcher.Sum.SumResponse> getRepeatedSumMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "repeatedSum",
-      requestType = Sum.SumRequest.class,
-      responseType = Sum.SumResponse.class,
+      requestType = it.ewlab.researcher.Sum.SumRequest.class,
+      responseType = it.ewlab.researcher.Sum.SumResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<Sum.SumRequest,
-      Sum.SumResponse> getRepeatedSumMethod() {
-    io.grpc.MethodDescriptor<Sum.SumRequest, Sum.SumResponse> getRepeatedSumMethod;
+  public static io.grpc.MethodDescriptor<it.ewlab.researcher.Sum.SumRequest,
+      it.ewlab.researcher.Sum.SumResponse> getRepeatedSumMethod() {
+    io.grpc.MethodDescriptor<it.ewlab.researcher.Sum.SumRequest, it.ewlab.researcher.Sum.SumResponse> getRepeatedSumMethod;
     if ((getRepeatedSumMethod = SumServiceGrpc.getRepeatedSumMethod) == null) {
       synchronized (SumServiceGrpc.class) {
         if ((getRepeatedSumMethod = SumServiceGrpc.getRepeatedSumMethod) == null) {
           SumServiceGrpc.getRepeatedSumMethod = getRepeatedSumMethod =
-              io.grpc.MethodDescriptor.<Sum.SumRequest, Sum.SumResponse>newBuilder()
+              io.grpc.MethodDescriptor.<it.ewlab.researcher.Sum.SumRequest, it.ewlab.researcher.Sum.SumResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "repeatedSum"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Sum.SumRequest.getDefaultInstance()))
+                  it.ewlab.researcher.Sum.SumRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Sum.SumResponse.getDefaultInstance()))
+                  it.ewlab.researcher.Sum.SumResponse.getDefaultInstance()))
               .setSchemaDescriptor(new SumServiceMethodDescriptorSupplier("repeatedSum"))
               .build();
         }
@@ -87,29 +89,29 @@ public final class SumServiceGrpc {
     return getRepeatedSumMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<Sum.SumRequest,
-      Sum.SumResponse> getStreamSumMethod;
+  private static volatile io.grpc.MethodDescriptor<it.ewlab.researcher.Sum.SumRequest,
+      it.ewlab.researcher.Sum.SumResponse> getStreamSumMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "streamSum",
-      requestType = Sum.SumRequest.class,
-      responseType = Sum.SumResponse.class,
+      requestType = it.ewlab.researcher.Sum.SumRequest.class,
+      responseType = it.ewlab.researcher.Sum.SumResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<Sum.SumRequest,
-      Sum.SumResponse> getStreamSumMethod() {
-    io.grpc.MethodDescriptor<Sum.SumRequest, Sum.SumResponse> getStreamSumMethod;
+  public static io.grpc.MethodDescriptor<it.ewlab.researcher.Sum.SumRequest,
+      it.ewlab.researcher.Sum.SumResponse> getStreamSumMethod() {
+    io.grpc.MethodDescriptor<it.ewlab.researcher.Sum.SumRequest, it.ewlab.researcher.Sum.SumResponse> getStreamSumMethod;
     if ((getStreamSumMethod = SumServiceGrpc.getStreamSumMethod) == null) {
       synchronized (SumServiceGrpc.class) {
         if ((getStreamSumMethod = SumServiceGrpc.getStreamSumMethod) == null) {
           SumServiceGrpc.getStreamSumMethod = getStreamSumMethod =
-              io.grpc.MethodDescriptor.<Sum.SumRequest, Sum.SumResponse>newBuilder()
+              io.grpc.MethodDescriptor.<it.ewlab.researcher.Sum.SumRequest, it.ewlab.researcher.Sum.SumResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "streamSum"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Sum.SumRequest.getDefaultInstance()))
+                  it.ewlab.researcher.Sum.SumRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Sum.SumResponse.getDefaultInstance()))
+                  it.ewlab.researcher.Sum.SumResponse.getDefaultInstance()))
               .setSchemaDescriptor(new SumServiceMethodDescriptorSupplier("streamSum"))
               .build();
         }
@@ -147,22 +149,22 @@ public final class SumServiceGrpc {
 
     /**
      */
-    public void simpleSum(Sum.SumRequest request,
-        io.grpc.stub.StreamObserver<Sum.SumResponse> responseObserver) {
+    public void simpleSum(it.ewlab.researcher.Sum.SumRequest request,
+        io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getSimpleSumMethod(), responseObserver);
     }
 
     /**
      */
-    public void repeatedSum(Sum.SumRequest request,
-        io.grpc.stub.StreamObserver<Sum.SumResponse> responseObserver) {
+    public void repeatedSum(it.ewlab.researcher.Sum.SumRequest request,
+        io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getRepeatedSumMethod(), responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<Sum.SumRequest> streamSum(
-        io.grpc.stub.StreamObserver<Sum.SumResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumRequest> streamSum(
+        io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getStreamSumMethod(), responseObserver);
     }
 
@@ -172,22 +174,22 @@ public final class SumServiceGrpc {
             getSimpleSumMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                Sum.SumRequest,
-                Sum.SumResponse>(
+                it.ewlab.researcher.Sum.SumRequest,
+                it.ewlab.researcher.Sum.SumResponse>(
                   this, METHODID_SIMPLE_SUM)))
           .addMethod(
             getRepeatedSumMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
-                Sum.SumRequest,
-                Sum.SumResponse>(
+                it.ewlab.researcher.Sum.SumRequest,
+                it.ewlab.researcher.Sum.SumResponse>(
                   this, METHODID_REPEATED_SUM)))
           .addMethod(
             getStreamSumMethod(),
             asyncBidiStreamingCall(
               new MethodHandlers<
-                Sum.SumRequest,
-                Sum.SumResponse>(
+                it.ewlab.researcher.Sum.SumRequest,
+                it.ewlab.researcher.Sum.SumResponse>(
                   this, METHODID_STREAM_SUM)))
           .build();
     }
@@ -213,24 +215,24 @@ public final class SumServiceGrpc {
 
     /**
      */
-    public void simpleSum(Sum.SumRequest request,
-        io.grpc.stub.StreamObserver<Sum.SumResponse> responseObserver) {
+    public void simpleSum(it.ewlab.researcher.Sum.SumRequest request,
+        io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSimpleSumMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void repeatedSum(Sum.SumRequest request,
-        io.grpc.stub.StreamObserver<Sum.SumResponse> responseObserver) {
+    public void repeatedSum(it.ewlab.researcher.Sum.SumRequest request,
+        io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumResponse> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getRepeatedSumMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<Sum.SumRequest> streamSum(
-        io.grpc.stub.StreamObserver<Sum.SumResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumRequest> streamSum(
+        io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumResponse> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getStreamSumMethod(), getCallOptions()), responseObserver);
     }
@@ -256,15 +258,15 @@ public final class SumServiceGrpc {
 
     /**
      */
-    public Sum.SumResponse simpleSum(Sum.SumRequest request) {
+    public it.ewlab.researcher.Sum.SumResponse simpleSum(it.ewlab.researcher.Sum.SumRequest request) {
       return blockingUnaryCall(
           getChannel(), getSimpleSumMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public java.util.Iterator<Sum.SumResponse> repeatedSum(
-        Sum.SumRequest request) {
+    public java.util.Iterator<it.ewlab.researcher.Sum.SumResponse> repeatedSum(
+        it.ewlab.researcher.Sum.SumRequest request) {
       return blockingServerStreamingCall(
           getChannel(), getRepeatedSumMethod(), getCallOptions(), request);
     }
@@ -290,8 +292,8 @@ public final class SumServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<Sum.SumResponse> simpleSum(
-        Sum.SumRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<it.ewlab.researcher.Sum.SumResponse> simpleSum(
+        it.ewlab.researcher.Sum.SumRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSimpleSumMethod(), getCallOptions()), request);
     }
@@ -319,12 +321,12 @@ public final class SumServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SIMPLE_SUM:
-          serviceImpl.simpleSum((Sum.SumRequest) request,
-              (io.grpc.stub.StreamObserver<Sum.SumResponse>) responseObserver);
+          serviceImpl.simpleSum((it.ewlab.researcher.Sum.SumRequest) request,
+              (io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumResponse>) responseObserver);
           break;
         case METHODID_REPEATED_SUM:
-          serviceImpl.repeatedSum((Sum.SumRequest) request,
-              (io.grpc.stub.StreamObserver<Sum.SumResponse>) responseObserver);
+          serviceImpl.repeatedSum((it.ewlab.researcher.Sum.SumRequest) request,
+              (io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -338,7 +340,7 @@ public final class SumServiceGrpc {
       switch (methodId) {
         case METHODID_STREAM_SUM:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.streamSum(
-              (io.grpc.stub.StreamObserver<Sum.SumResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<it.ewlab.researcher.Sum.SumResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -351,7 +353,7 @@ public final class SumServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return Sum.getDescriptor();
+      return it.ewlab.researcher.Sum.getDescriptor();
     }
 
     @java.lang.Override

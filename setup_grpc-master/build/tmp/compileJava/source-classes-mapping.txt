@@ -1,0 +1,64 @@
+Sum.java
+ Sum
+ Sum$SumRequest
+ Sum$SumRequest$1
+ Sum$SumRequest$Builder
+ Sum$SumRequestOrBuilder
+ Sum$SumResponse
+ Sum$SumResponse$1
+ Sum$SumResponse$Builder
+ Sum$SumResponseOrBuilder
+UniversityEx/Client.java
+ UniversityEx.Client
+it/ewlab/researcher/SumServiceGrpc.java
+ it.ewlab.researcher.SumServiceGrpc
+ it.ewlab.researcher.SumServiceGrpc$MethodHandlers
+ it.ewlab.researcher.SumServiceGrpc$SumServiceBaseDescriptorSupplier
+ it.ewlab.researcher.SumServiceGrpc$SumServiceBlockingStub
+ it.ewlab.researcher.SumServiceGrpc$SumServiceFileDescriptorSupplier
+ it.ewlab.researcher.SumServiceGrpc$SumServiceFutureStub
+ it.ewlab.researcher.SumServiceGrpc$SumServiceImplBase
+ it.ewlab.researcher.SumServiceGrpc$SumServiceMethodDescriptorSupplier
+ it.ewlab.researcher.SumServiceGrpc$SumServiceStub
+it/ewlab/researcher/ResearcherOuterClass.java
+ it.ewlab.researcher.ResearcherOuterClass
+ it.ewlab.researcher.ResearcherOuterClass$Researcher
+ it.ewlab.researcher.ResearcherOuterClass$Researcher$1
+ it.ewlab.researcher.ResearcherOuterClass$Researcher$Builder
+ it.ewlab.researcher.ResearcherOuterClass$Researcher$Paper
+ it.ewlab.researcher.ResearcherOuterClass$Researcher$Paper$1
+ it.ewlab.researcher.ResearcherOuterClass$Researcher$Paper$Builder
+ it.ewlab.researcher.ResearcherOuterClass$Researcher$PaperOrBuilder
+ it.ewlab.researcher.ResearcherOuterClass$Researcher$ResearcherType
+ it.ewlab.researcher.ResearcherOuterClass$Researcher$ResearcherType$1
+ it.ewlab.researcher.ResearcherOuterClass$ResearcherOrBuilder
+researcher/Client.java
+ researcher.Client
+it/ewlab/researcher/Sum.java
+ it.ewlab.researcher.Sum
+ it.ewlab.researcher.Sum$SumRequest
+ it.ewlab.researcher.Sum$SumRequest$1
+ it.ewlab.researcher.Sum$SumRequest$Builder
+ it.ewlab.researcher.Sum$SumRequestOrBuilder
+ it.ewlab.researcher.Sum$SumResponse
+ it.ewlab.researcher.Sum$SumResponse$1
+ it.ewlab.researcher.Sum$SumResponse$Builder
+ it.ewlab.researcher.Sum$SumResponseOrBuilder
+UniversityEx/Server.java
+ UniversityEx.Server
+researcher/Server.java
+ researcher.Server
+it/ewlab/researcher/InfoStudentOuterClass.java
+ it.ewlab.researcher.InfoStudentOuterClass
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$1
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$Builder
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$Exam
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$Exam$1
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$Exam$Builder
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$ExamOrBuilder
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$PlaceOfResidence
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$PlaceOfResidence$1
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$PlaceOfResidence$Builder
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$PlaceOfResidenceOrBuilder
+ it.ewlab.researcher.InfoStudentOuterClass$InfoStudentOrBuilder
