@@ -766,7 +766,7 @@ public final class Sum {
      * <code>required int32 sumN = 1;</code>
      * @return The sumN.
      */
-    public int getSumN() {
+    public static int getSumN() {
       return sumN_;
     }
 

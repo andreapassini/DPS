@@ -40,7 +40,7 @@ public class Client {
             asyncSimpleSum();
         } else if (choise == 2) {
             // Repeated sum
-
+            repeatedSum();
         } else if (choise == 3) {
             // Stream sum
         } else if (choise == 0) {
@@ -56,7 +56,11 @@ public class Client {
         System.out.println("\n...Done!");
     }
 
-    private static void synchSimpleSum() {
+    private static void repeatedSum() {
+        
+    }
+
+    public static void synchSimpleSum() {
         // input stream initialization (from user keyboard)
         BufferedReader inFromUser =
                 new BufferedReader(new InputStreamReader(System.in));
@@ -97,7 +101,7 @@ public class Client {
         channel.shutdown();
     }
 
-    private static void asyncSimpleSum() {
+    public static void asyncSimpleSum() {
         //plaintext channel on the address (ip/port) which offers the GreetingService service
         final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8080").usePlaintext().build();
 
@@ -163,6 +167,7 @@ public class Client {
 
 
     }
+
 
 
 }
