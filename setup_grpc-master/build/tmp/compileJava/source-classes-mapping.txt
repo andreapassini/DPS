@@ -8,8 +8,9 @@ Sum.java
  Sum$SumResponse$1
  Sum$SumResponse$Builder
  Sum$SumResponseOrBuilder
-UniversityEx/Client.java
- UniversityEx.Client
+gRPCSum/SumServiceImpl.java
+ gRPCSum.SumServiceImpl
+ gRPCSum.SumServiceImpl$1
 it/ewlab/researcher/SumServiceGrpc.java
  it.ewlab.researcher.SumServiceGrpc
  it.ewlab.researcher.SumServiceGrpc$MethodHandlers
@@ -20,6 +21,10 @@ it/ewlab/researcher/SumServiceGrpc.java
  it.ewlab.researcher.SumServiceGrpc$SumServiceImplBase
  it.ewlab.researcher.SumServiceGrpc$SumServiceMethodDescriptorSupplier
  it.ewlab.researcher.SumServiceGrpc$SumServiceStub
+UniversityEx/Client.java
+ UniversityEx.Client
+gRPCSum/Server.java
+ gRPCSum.Server
 it/ewlab/researcher/ResearcherOuterClass.java
  it.ewlab.researcher.ResearcherOuterClass
  it.ewlab.researcher.ResearcherOuterClass$Researcher
@@ -34,20 +39,6 @@ it/ewlab/researcher/ResearcherOuterClass.java
  it.ewlab.researcher.ResearcherOuterClass$ResearcherOrBuilder
 researcher/Client.java
  researcher.Client
-it/ewlab/researcher/Sum.java
- it.ewlab.researcher.Sum
- it.ewlab.researcher.Sum$SumRequest
- it.ewlab.researcher.Sum$SumRequest$1
- it.ewlab.researcher.Sum$SumRequest$Builder
- it.ewlab.researcher.Sum$SumRequestOrBuilder
- it.ewlab.researcher.Sum$SumResponse
- it.ewlab.researcher.Sum$SumResponse$1
- it.ewlab.researcher.Sum$SumResponse$Builder
- it.ewlab.researcher.Sum$SumResponseOrBuilder
-UniversityEx/Server.java
- UniversityEx.Server
-researcher/Server.java
- researcher.Server
 it/ewlab/researcher/InfoStudentOuterClass.java
  it.ewlab.researcher.InfoStudentOuterClass
  it.ewlab.researcher.InfoStudentOuterClass$InfoStudent
@@ -62,3 +53,22 @@ it/ewlab/researcher/InfoStudentOuterClass.java
  it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$PlaceOfResidence$Builder
  it.ewlab.researcher.InfoStudentOuterClass$InfoStudent$PlaceOfResidenceOrBuilder
  it.ewlab.researcher.InfoStudentOuterClass$InfoStudentOrBuilder
+it/ewlab/researcher/Sum.java
+ it.ewlab.researcher.Sum
+ it.ewlab.researcher.Sum$SumRequest
+ it.ewlab.researcher.Sum$SumRequest$1
+ it.ewlab.researcher.Sum$SumRequest$Builder
+ it.ewlab.researcher.Sum$SumRequestOrBuilder
+ it.ewlab.researcher.Sum$SumResponse
+ it.ewlab.researcher.Sum$SumResponse$1
+ it.ewlab.researcher.Sum$SumResponse$Builder
+ it.ewlab.researcher.Sum$SumResponseOrBuilder
+UniversityEx/Server.java
+ UniversityEx.Server
+researcher/Server.java
+ researcher.Server
+gRPCSum/Client.java
+ gRPCSum.Client
+ gRPCSum.Client$1
+ gRPCSum.Client$2
+ gRPCSum.Client$3

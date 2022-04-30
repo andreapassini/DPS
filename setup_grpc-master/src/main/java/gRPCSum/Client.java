@@ -34,26 +34,29 @@ public class Client {
             throw new RuntimeException(e);
         }
 
-        if(choise == 1){
-            //Simple sum
-            synchSimpleSum();
-            asyncSimpleSum();
-        } else if (choise == 2) {
-            // Repeated sum
-            AsynchRepeatedSum();
-        } else if (choise == 3) {
-            // Stream sum
-            AsynchStreamSum();
-        } else if (choise == 0) {
-            // Error
-            System.out.println("Error");
+        while (choise != 0){
+            if(choise == 1){
+                //Simple sum
+                synchSimpleSum();
+                asyncSimpleSum();
+            } else if (choise == 2) {
+                // Repeated sum
+                AsynchRepeatedSum();
+            } else if (choise == 3) {
+                // Stream sum
+                AsynchStreamSum();
+            } else if (choise == 0) {
+                // Error
+                System.out.println("Error");
+            }
         }
-
 
         System.out.println("\n...Done!");
     }
 
     public static void synchSimpleSum() {
+        System.out.println("Simple Sum Synch");
+
         // input stream initialization (from user keyboard)
         BufferedReader inFromUser =
                 new BufferedReader(new InputStreamReader(System.in));
@@ -91,10 +94,13 @@ public class Client {
         System.out.println(response.getSumN());
 
         //closing the channel
+        System.out.println("Closing Channel");
         channel.shutdown();
     }
 
     public static void asyncSimpleSum() {
+        System.out.println("Simple Sum Asynch");
+
         //plaintext channel on the address (ip/port) which offers the GreetingService service
         final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8080").usePlaintext().build();
 
@@ -115,7 +121,7 @@ public class Client {
         }
 
         int n2;
-        System.out.println("Insert II Number:  ");
+        System.out.println("Insert n. of times:  ");
         try {
             n2 = Integer.parseInt(inFromUser.readLine());
         } catch (IOException e) {
@@ -132,7 +138,7 @@ public class Client {
             @Override
             public void onNext(Sum.SumResponse value) {
                 //each item is just printed
-                System.out.println(Sum.SumResponse.getSumN());
+                System.out.println(value.getSumN());
             }
 
             //if there are some errors, this method will be called
@@ -144,7 +150,8 @@ public class Client {
 
             //when the stream is completed (the server called "onCompleted") just close the channel
             public void onCompleted() {
-
+                //closing the channel
+                System.out.println("Closing Channel");
                 channel.shutdownNow();
 
             }
@@ -254,7 +261,7 @@ public class Client {
         int n1 = 1;
         int n2 = 1;
 
-        while(n1 == 0 || n2 == 0){
+        while(n1 != 0 || n2 != 0){
 
             System.out.println("Insert I Number:  (0) to exit");
             try {
@@ -277,12 +284,10 @@ public class Client {
 
         }
 
-        try {
-            //you need this. otherwise the method will terminate before that answers from the server are received
-            channel.awaitTermination(10, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+        //you need this. otherwise the method will terminate before that answers from the server are received
+        channel.awaitTermination(10, TimeUnit.SECONDS);
+
 
     }
 
