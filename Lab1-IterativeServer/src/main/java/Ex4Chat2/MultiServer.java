@@ -9,31 +9,33 @@ public class MultiServer {
 
     public static void main(String argv[]) throws Exception{
 
-        // Init Q
-        Queue q = new Queue();
-
         // Connecting with socket
         int portNumber = 6789;
         ServerSocket welcomeSocket = new ServerSocket(portNumber);
         System.out.println("MultiServer started!");
 
-        // input stream initialization (from user keyboard)
-        BufferedReader inFromUser =
-                new BufferedReader(new InputStreamReader(System.in));
+        // Init Q
+        Queue q = new Queue();
+        Queue q1 = new Queue();
 
-        while (true){
+        try {
+            welcomeSocket = new ServerSocket(portNumber);
+
+//            while (true) {
             Socket connectionSocket = welcomeSocket.accept();
+            ProducerClientFromUser p1 = new ProducerClientFromUser("p1", q);
+            ConsumerClientToServer c1 = new ConsumerClientToServer("c1", q, connectionSocket);
+            ProducerServerFromClient p2 = new ProducerServerFromClient("p2", q1, connectionSocket);
+            ConsumerServerFromQueue c2 = new ConsumerServerFromQueue("c2", q1);
 
-            if(connectionSocket != null){
-                System.out.println("Client accept at: " + welcomeSocket.getLocalSocketAddress());
-
-                // thread creation passing established socket as arg
-                ServerThread theThread =
-                        new ServerThread(connectionSocket, q);
-
-                // Start the thread
-                theThread.start();
-            }
+            new Thread(p1).start();
+            new Thread(c1).start();
+            new Thread(p2).start();
+            new Thread(c2).start();
+//            }
+        } catch(Exception e) {
+            System.out.println("\nEXCEPTION!");
+            e.printStackTrace();
         }
 
     }
