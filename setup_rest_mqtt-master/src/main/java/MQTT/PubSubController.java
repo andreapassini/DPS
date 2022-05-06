@@ -21,16 +21,18 @@ public class PubSubController {
         int subQosArray [] = new int[] {1,2};
         int pubQos = 2;
 
+        int sum[];
+
         Queue q = Queue.getInstance();
 
         // input stream initialization (from user keyboard)
-        BufferedReader inFromUser =
-                new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader inFromUser =
+        //        new BufferedReader(new InputStreamReader(System.in));
 
         try {
             client = new MqttClient(broker, clientId);
             MqttConnectOptions connOpts = new MqttConnectOptions();
-            connOpts.setCleanSession(true); // false = the broker stores all subscriptions for the client and all missed messages for the client that subscribed with a Qos level 1 or 2
+            connOpts.setCleanSession(false); // false = the broker stores all subscriptions for the client and all missed messages for the client that subscribed with a Qos level 1 or 2
 
             // Connect the client
             System.out.println(clientId + " Connecting Broker " + broker);
@@ -50,11 +52,14 @@ public class PubSubController {
                             "\n\tMessage: " + receivedMessage +
                             "\n\tQoS:     " + message.getQos() + "\n");
 
-                    if(topic.equals("home/controllers/temp")){
-                        q.Add(Integer.parseInt(receivedMessage));
+                    if(topic.equals("home/sensors/temp")){
+                        // This make all crash
+                        //q.Add(Integer.parseInt(receivedMessage));
                         System.out.println("in Queue");
                     }
 
+
+                    /*
                     System.out.println("\n ***  Press 1 to send to HEATER *** \n");
 
                     int a;
@@ -69,6 +74,8 @@ public class PubSubController {
                         // pass client, client id, pubqos
                         SendMessageToHeater(client, clientId, pubQos, pubTopic);
                     }
+
+                     */
 
                 }
 
@@ -93,11 +100,34 @@ public class PubSubController {
             cmd.nextLine();
 
 
-            System.out.println("\n ***  Press a random key to exit *** \n");
+            // I can do all my stuff here
+            System.out.println("\n ***  Press a random key to SEND TO HEATER *** \n");
             Scanner command = new Scanner(System.in);
             command.nextLine();
 
-            client.disconnect();
+            // Send message to Heater
+            int average = Queue.getInstance().AverageLastFive();
+            if(average>20){
+                // send OFF msg to Heater
+                String payload = "off";
+                MqttMessage message = new MqttMessage(payload.getBytes());
+                // Set the QoS on the Message
+                message.setQos(pubQos);
+                System.out.println(clientId + " Publishing message: " + payload + " ...");
+                client.publish(pubTopic, message);
+                System.out.println(clientId + " Message published - Thread PID: " + Thread.currentThread().getId());
+            } else {
+                // send ON msg to Heater
+                String payload = "on";
+                MqttMessage message = new MqttMessage(payload.getBytes());
+                // Set the QoS on the Message
+                message.setQos(pubQos);
+                System.out.println(clientId + " Publishing message: " + payload + " ...");
+                client.publish(pubTopic, message);
+                System.out.println(clientId + " Message published - Thread PID: " + Thread.currentThread().getId());
+            }
+
+            //client.disconnect();
 
 
 
@@ -112,6 +142,7 @@ public class PubSubController {
 
     }
 
+    /*
     private static void SendMessageToHeater(MqttClient client, String clientId, int pubQos, String pubTopic) throws MqttException {
         // Send message to Heater
         int average = Queue.getInstance().AverageLastFive();
@@ -136,4 +167,6 @@ public class PubSubController {
         }
     }
 
+
+     */
 }

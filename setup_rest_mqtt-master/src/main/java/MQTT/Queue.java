@@ -33,7 +33,7 @@ public class Queue {
         int sum = 0;
         Node ref = last;
         for(int i=0; i<5; i++){
-            sum = ref.getContent();
+            sum += ref.getContent();
             ref = ref.getNext();
         }
 
