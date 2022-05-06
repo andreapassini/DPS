@@ -6,7 +6,7 @@ public class PubExample {
     public static void main(String[] args) {
         MqttClient client;
         String broker = "tcp://localhost:1883";
-        String clientId = MqttClient.generateClientId();
+        String clientId = MqttClient.generateClientId(); // Create and ID
         String topic = "home/sensors/light";
         int qos = 2;
 
@@ -16,6 +16,7 @@ public class PubExample {
             client = new MqttClient(broker, clientId);
             MqttConnectOptions connOpts = new MqttConnectOptions();
             connOpts.setCleanSession(true);
+
             //connOpts.setUserName(username); // optional
             //connOpts.setPassword(password.toCharArray()); // optional
             //connOpts.setWill("this/is/a/topic","will message".getBytes(),1,false);  // optional
