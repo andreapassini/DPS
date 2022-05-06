@@ -1,5 +1,7 @@
 package MQTT;
 
+import REST.beans.Words;
+
 import java.util.List;
 
 public class Queue {
@@ -8,7 +10,15 @@ public class Queue {
 
     Node last;
 
-    Queue(){
+    private static Queue instance;
+
+    private Queue(){
+    }
+
+    public synchronized static Queue getInstance(){
+        if(instance==null)
+            instance = new Queue();
+        return instance;
     }
 
     public synchronized void Add(int element){
