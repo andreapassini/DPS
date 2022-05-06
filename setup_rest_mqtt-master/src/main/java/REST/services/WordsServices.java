@@ -39,7 +39,7 @@ public class WordsServices {
     }
 
     // Modify a word definition by its name
-    @Path("put")
+    @Path("modify")
     @PUT
     @Produces({"application/json", "application/xml"})
     public Response modify(Word word){
