@@ -15,9 +15,15 @@ public class WordsServices {
     @Path("add")
     @POST
     @Consumes({"application/json", "application/xml"})
-    public Response addWord(Word w){
-        Words.getInstance().add(w);
-        return Response.ok().build();
+    public Response addWord(Word word){
+        Word w =Words.getInstance().getByName(word.getName());
+        if(w == null){
+            Words.getInstance().add(word);
+            return Response.ok().build();
+        }
+        else {
+            return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+        }
     }
 
     // get a word definition by its name
