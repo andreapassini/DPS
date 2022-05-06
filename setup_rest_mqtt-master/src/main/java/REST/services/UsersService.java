@@ -7,7 +7,7 @@ import REST.beans.Users;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
-@Path("users")
+@Path("users") // defines URI where res of this class are located
 public class UsersService {
 
     //restituisce la lista di utenti
