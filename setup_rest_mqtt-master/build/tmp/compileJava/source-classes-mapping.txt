@@ -17,13 +17,25 @@ MQTT/PubSubExample.java
  MQTT.PubSubExample$1
 REST/StartServer.java
  REST.StartServer
-MQTT/SubExample.java
- MQTT.SubExample
- MQTT.SubExample$1
+MQTT/PubExample.java
+ MQTT.PubExample
 REST/Client/ClientExample.java
  REST.Client.ClientExample
 MQTT/PubExampleCallback.java
  MQTT.PubExampleCallback
  MQTT.PubExampleCallback$1
-MQTT/PubExample.java
- MQTT.PubExample
+MQTT/PubSubController.java
+ MQTT.PubSubController
+ MQTT.PubSubController$1
+MQTT/SubHeater.java
+ MQTT.SubHeater
+ MQTT.SubHeater$1
+MQTT/Node.java
+ MQTT.Node
+MQTT/Queue.java
+ MQTT.Queue
+MQTT/SubExample.java
+ MQTT.SubExample
+ MQTT.SubExample$1
+MQTT/PubTemperatureSensor.java
+ MQTT.PubTemperatureSensor

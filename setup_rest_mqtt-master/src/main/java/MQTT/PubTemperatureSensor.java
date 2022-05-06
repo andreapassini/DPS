@@ -40,14 +40,15 @@ public class PubTemperatureSensor {
                 client.publish(topic, message);
                 System.out.println(clientId + " Message published");
 
-                if (client.isConnected())
-                    client.disconnect();
-                System.out.println("Publisher " + clientId + " disconnected");
-
                 // Every 5 sec
                 Thread.sleep(5*1000);
             }
 
+            /*
+            if (client.isConnected())
+                client.disconnect();
+            System.out.println("Publisher " + clientId + " disconnected");
+            */
 
         } catch (MqttException me ) {
             System.out.println("reason " + me.getReasonCode());
