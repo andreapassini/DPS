@@ -1,7 +1,7 @@
 package MQTT;
 
 import org.eclipse.paho.client.mqttv3.*;
-import org.omg.PortableServer.THREAD_POLICY_ID;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PubTemperatureSensor {
     // Every 5 sec publish a random number between 18 and 22
@@ -31,6 +31,11 @@ public class PubTemperatureSensor {
             System.out.println(clientId + " Connected");
 
             while (true){
+
+                // nextInt is normally exclusive of the top value,
+                // so add 1 to make it inclusive
+                int randomNum = ThreadLocalRandom.current().nextInt(18, 20 + 1);
+
                 String payload = String.valueOf(18 + (Math.random() * 22)); // create a random number between 18 and 22
                 MqttMessage message = new MqttMessage(payload.getBytes());
 
