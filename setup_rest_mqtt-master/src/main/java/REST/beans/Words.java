@@ -2,6 +2,7 @@ package REST.beans;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +37,7 @@ public class Words {
 
     }
 
-    public synchronized void setUWordlist(List<Word> wordlist) {
+    public synchronized void setWordlist(List<Word> wordlist) {
         this.wordlist = wordlist;
     }
 
@@ -45,10 +46,22 @@ public class Words {
     }
 
     public Word getByName(String name){
-        List<Word> usersCopy = getWordlist();
-        for(Word u: usersCopy)
+        List<Word> wordCopy = getWordlist();
+        for(Word u: wordCopy)
             if(u.getName().toLowerCase().equals(name.toLowerCase()))
                 return u;
         return null;
+    }
+
+    public synchronized boolean modify(Word word){
+        List<Word> wordCopy = getWordlist();
+        for (Word w: wordCopy){
+            if(w.getName().toLowerCase().equals(word.getName().toLowerCase())){
+                w.setDefinition(word.getDefinition());
+                return true;
+            }
+        }
+
+        return false;
     }
 }
