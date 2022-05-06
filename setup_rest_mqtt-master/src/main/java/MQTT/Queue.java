@@ -10,6 +10,8 @@ public class Queue {
 
     Node last;
 
+    int i=0;
+
     private static Queue instance;
 
     private Queue(){
@@ -24,6 +26,7 @@ public class Queue {
     public synchronized void Add(int element){
         last = new Node(last, element);
         queue.add(last);
+        i++;
     }
 
     public int AverageLastFive(){
@@ -35,6 +38,13 @@ public class Queue {
         }
 
         return sum/5;
+    }
+
+    public synchronized boolean isFive(){
+        if (i>=5){
+            return true;
+        }
+        return false;
     }
 }
 
