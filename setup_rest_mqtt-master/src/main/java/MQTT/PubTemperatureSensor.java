@@ -11,7 +11,7 @@ public class PubTemperatureSensor {
         String broker = "tcp://localhost:1883";
         String clientId = MqttClient.generateClientId(); // Create and ID
         String topic = "home/sensors/temp";
-        int qos = 1;
+        int qos = 2;
 
         //brew services start mosquitto
 
