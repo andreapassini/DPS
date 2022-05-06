@@ -6,6 +6,9 @@ import java.sql.Timestamp;
 import java.util.Scanner;
 
 public class SubExample {
+
+    // Remember to start mosquito first from directory C/ProgramFiles
+
     public static void main(String[] args) {
         MqttClient client;
         String broker = "tcp://localhost:1883";
