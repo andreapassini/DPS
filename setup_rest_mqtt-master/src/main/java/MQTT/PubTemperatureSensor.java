@@ -36,7 +36,7 @@ public class PubTemperatureSensor {
                 // so add 1 to make it inclusive
                 int randomNum = ThreadLocalRandom.current().nextInt(18, 20 + 1);
 
-                String payload = String.valueOf(18 + (Math.random() * 22)); // create a random number between 18 and 22
+                String payload = String.valueOf(randomNum); // create a random number between 18 and 22
                 MqttMessage message = new MqttMessage(payload.getBytes());
 
                 // Set the QoS on the Message
