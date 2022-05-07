@@ -7,10 +7,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class PubSubController {
+    static ArrayList<Integer> sumList;
+
+    static  int i=0;
 
     public static void main(String[] args) {
         MqttClient client;
@@ -21,13 +25,7 @@ public class PubSubController {
         int subQosArray [] = new int[] {1,2};
         int pubQos = 2;
 
-        int sum[];
-
-        Queue q = Queue.getInstance();
-
-        // input stream initialization (from user keyboard)
-        //BufferedReader inFromUser =
-        //        new BufferedReader(new InputStreamReader(System.in));
+        sumList = new ArrayList<Integer>();
 
         try {
             client = new MqttClient(broker, clientId);
@@ -52,30 +50,19 @@ public class PubSubController {
                             "\n\tMessage: " + receivedMessage +
                             "\n\tQoS:     " + message.getQos() + "\n");
 
-                    if(topic.equals("home/sensors/temp")){
-                        // This make all crash
-                        //q.Add(Integer.parseInt(receivedMessage));
+                    if(topic.equals("home/sensors/temp"))
+                    {
                         System.out.println("in Queue");
+
+                        // This makes all crash
+                        //q.Add(Integer.parseInt(receivedMessage));
+
+                        sumList.add(Integer.parseInt(receivedMessage));
+                        i++;
+
+                        System.out.println(sumList);
+                        //sum += Integer.parseInt(receivedMessage);
                     }
-
-
-                    /*
-                    System.out.println("\n ***  Press 1 to send to HEATER *** \n");
-
-                    int a;
-                    // read a line from the user
-                    try {
-                        a = Integer.parseInt(inFromUser.readLine());
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-
-                    if(a == 1){
-                        // pass client, client id, pubqos
-                        SendMessageToHeater(client, clientId, pubQos, pubTopic);
-                    }
-
-                     */
 
                 }
 
@@ -106,7 +93,9 @@ public class PubSubController {
             command.nextLine();
 
             // Send message to Heater
-            int average = Queue.getInstance().AverageLastFive();
+            // Get the average from last 5 samples
+            int average = getAverageFive(sumList);
+
             if(average>20){
                 // send OFF msg to Heater
                 String payload = "off";
@@ -116,7 +105,9 @@ public class PubSubController {
                 System.out.println(clientId + " Publishing message: " + payload + " ...");
                 client.publish(pubTopic, message);
                 System.out.println(clientId + " Message published - Thread PID: " + Thread.currentThread().getId());
-            } else {
+            }
+            else
+            {
                 // send ON msg to Heater
                 String payload = "on";
                 MqttMessage message = new MqttMessage(payload.getBytes());
@@ -129,8 +120,6 @@ public class PubSubController {
 
             //client.disconnect();
 
-
-
         } catch (MqttException me ) {
             System.out.println("reason " + me.getReasonCode());
             System.out.println("msg " + me.getMessage());
@@ -142,31 +131,13 @@ public class PubSubController {
 
     }
 
-    /*
-    private static void SendMessageToHeater(MqttClient client, String clientId, int pubQos, String pubTopic) throws MqttException {
-        // Send message to Heater
-        int average = Queue.getInstance().AverageLastFive();
-        if(average>20){
-            // send OFF msg to Heater
-            String payload = "off";
-            MqttMessage message = new MqttMessage(payload.getBytes());
-            // Set the QoS on the Message
-            message.setQos(pubQos);
-            System.out.println(clientId + " Publishing message: " + payload + " ...");
-            client.publish(pubTopic, message);
-            System.out.println(clientId + " Message published - Thread PID: " + Thread.currentThread().getId());
-        } else {
-            // send ON msg to Heater
-            String payload = "on";
-            MqttMessage message = new MqttMessage(payload.getBytes());
-            // Set the QoS on the Message
-            message.setQos(pubQos);
-            System.out.println(clientId + " Publishing message: " + payload + " ...");
-            client.publish(pubTopic, message);
-            System.out.println(clientId + " Message published - Thread PID: " + Thread.currentThread().getId());
+    private static int getAverageFive(ArrayList<Integer> list){
+        int sum = 0;
+
+        for (int j = i-1; j>(i-1)-5; j--){
+            sum += list.get(j);
         }
+
+        return sum;
     }
-
-
-     */
 }

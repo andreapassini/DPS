@@ -34,7 +34,7 @@ public class PubTemperatureSensor {
 
                 // nextInt is normally exclusive of the top value,
                 // so add 1 to make it inclusive
-                int randomNum = ThreadLocalRandom.current().nextInt(18, 20 + 1);
+                int randomNum = ThreadLocalRandom.current().nextInt(18, 22 + 1);
 
                 String payload = String.valueOf(randomNum); // create a random number between 18 and 22
                 MqttMessage message = new MqttMessage(payload.getBytes());
