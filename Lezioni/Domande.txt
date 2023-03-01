@@ -1,0 +1,37 @@
+ESAME
+
+INTRO
+- slide 9 : perchè un sd deve essere trasparente, cosa vuol dire e che tipi di trasparenza ci sono
+- cosa distingue un sist cluster da uno cloud o grid?
+
+ARCHITETTURE
+- distribuzione dei task tra client e server
+- differenza overlay network strutturato / non strutturato e vantaggi/svantaggi di quello strutturato
+
+COMUNICAZIONE
+- le configurazioni possibili dei modelli di comunicazione (sincronia, persistenza, ..)
+- come sono le socket rispetto ai vari modelli di comunicazione? (sincronia? persistenza?)
+- come si specifica la procedura degli stub (tecnicamente)? (linguaggio neutro..)
+
+NAMING
+- qual è la differenza di tra la risoluzione dei nomi iterativa e ricorsiva?
+
+SINCRONIZZAZIONE
+- qual è un modo alternativo a quello di un server perchè i nodi di un SD abbiano un orologio (quasi ) preciso?
+- NTP: come faccio a stimare ora giusta?
+- per risolvere il problema dell'esempio di compilazione con make, quale delle tre tipologie di sincronizzazione di clock è necessario per risolverlo
+- esercizio simile a quello sull'alg di lamport
+
+FAULT TOLLERANCE
+- process resiliance: come decido quanti processi avere in un gruppo?
+
+SICUREZZA
+- modi principali in cui si implementa un meccanismo di controllo dell'accesso
+
+DFS
+- virtual file system layer in NFS
+
+FRAMEWORKS
+- quali sono i linguaggi e i protocolli tipici dei web services?
+- ci sono due modi per fare chiamate SOAP: quali sono?
+- in SOAP come si distingue una risposta corrispondente a una richiesta?
